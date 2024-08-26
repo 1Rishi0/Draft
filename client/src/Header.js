@@ -5,7 +5,7 @@ import { UserContext } from "./UserContext";
 export default function Header() {
   const {setUserInfo, userInfo} = useContext(UserContext);
   useEffect(() => {
-    fetch('http://localhost:4000/profile', {
+    fetch('https://draft-api.vercel.app/profile', {
       credentials: 'include' ,
     }).then(resonse => {
       resonse.json().then(userInfo => {
@@ -15,7 +15,7 @@ export default function Header() {
   }, []);
 
   function logout() {
-    fetch('http://localhost:4000/logout', {
+    fetch('https://draft-api.vercel.app/logout', {
       credentials: 'include',
       method: 'POST',
   });
